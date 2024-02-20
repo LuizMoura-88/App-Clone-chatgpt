@@ -1,16 +1,22 @@
 import { cn } from "@/utils/cn";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SidebarProps {
   isVisible: boolean;
 }
 
 export const Sidebar = ({ isVisible }: SidebarProps) => {
-  const [isOpen, setIsOpen] = useState<boolean>(window.innerWidth > 768);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsOpen(window.innerWidth > 768);
+  }, []);
+
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
+
   return (
     <>
       {isVisible && (

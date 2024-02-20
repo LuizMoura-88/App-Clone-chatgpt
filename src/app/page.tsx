@@ -3,22 +3,36 @@ import { ReactElement, useEffect, useState } from "react";
 import { KeyInstructions } from "./_components/key-instructions";
 import { ChatInput } from "./_components/chat-input";
 import { Sidebar } from "./_components/sidevar";
-import { ChatMessages, Message } from "./_components/chat-messages";
+import { ChatMessages } from "./_components/chat-messages";
+import axios from "@/utils/axios";
+import { useChat } from "@/hooks/use-chat";
 
 function Home(): ReactElement {
   const [openAiKey, setOpenAiKey] = useState<string>("");
-  // useEffect(() => {
-  //   alert(openAiKey);
-  // }, [openAiKey]);
+  const { chats, isLoading, selectedChat, addUserMessage } = useChat();
 
   const placeholder = !!openAiKey
     ? "😁 Digite um OI"
     : "🔑 Digite sua chave de API";
 
-  const messages = [
-    { role: "user", content: "# olá" },
-    { role: "assistant", content: "olá. **como posso ajudar?**" },
-  ] as Message[];
+  const getOpenAiResponse = async () => {
+    const response = await axios.post("/api/bot", {
+      key: openAiKey,
+      messages: [
+        {
+          role: "user",
+          content: "Quanto eh 5 + 5?",
+        },
+      ],
+    });
+    console.log(response);
+  };
+
+  const handleSumitMessage = (message: string) => {
+    addUserMessage(selectedChat, message);
+  };
+
+  const handleChatSubmit = !!openAiKey ? handleSumitMessage : setOpenAiKey;
 
   return (
     <div className="flex">
@@ -29,11 +43,17 @@ function Home(): ReactElement {
           CloneGPT
         </h1>
         {!!openAiKey ? (
-          <ChatMessages messages={messages} isLoading={false} />
+          <ChatMessages
+            messages={chats[selectedChat].messages}
+            isLoading={false}
+          />
         ) : (
           <KeyInstructions />
         )}
-        <ChatInput onSubmitMessage={setOpenAiKey} placeholder={placeholder} />
+        <ChatInput
+          onSubmitMessage={handleChatSubmit}
+          placeholder={placeholder}
+        />
       </main>
     </div>
   );

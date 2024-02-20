@@ -1,11 +1,7 @@
+import { Message } from "@/hooks/use-chat";
 import { cn } from "@/utils/cn";
 import Image from "next/image";
 import Markdown from "react-markdown";
-
-export interface Message {
-  role: "user" | "assistant";
-  content: string;
-}
 
 interface ChatMessagesProps {
   messages: Message[];
