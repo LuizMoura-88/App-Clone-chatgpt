@@ -45,7 +45,7 @@ const MessageBlock = ({
         />
         {isLoading ? (
           <Image
-            src="/images/loading.sgv"
+            src="/images/loading.svg"
             width={36}
             height={36}
             alt="Animação de carregamento (loading)"

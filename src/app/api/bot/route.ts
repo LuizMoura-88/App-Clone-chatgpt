@@ -3,7 +3,9 @@ import { HttpStatusCode } from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request): Promise<NextResponse> {
-  const { key, messages } = await req.json();
+  const { key, chat } = await req.json();
+
+  const { messages } = chat;
 
   const chatCompletion = await openai(key).chat.completions.create({
     messages,
@@ -13,7 +15,7 @@ export async function POST(req: Request): Promise<NextResponse> {
   const message = chatCompletion.choices[0].message;
 
   return NextResponse.json(
-    { messages: messages.concat(message) },
+    { ...chat, messages: messages.concat(message) },
     { status: HttpStatusCode.Ok }
   );
 }

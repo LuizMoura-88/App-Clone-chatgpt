@@ -1,4 +1,7 @@
 "use client";
+
+// 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
+
 import { ReactElement, useEffect, useState } from "react";
 import { KeyInstructions } from "./_components/key-instructions";
 import { ChatInput } from "./_components/chat-input";
@@ -9,24 +12,11 @@ import { useChat } from "@/hooks/use-chat";
 
 function Home(): ReactElement {
   const [openAiKey, setOpenAiKey] = useState<string>("");
-  const { chats, isLoading, selectedChat, addUserMessage } = useChat();
+  const { chats, isLoading, selectedChat, addUserMessage } = useChat(openAiKey);
 
   const placeholder = !!openAiKey
     ? "😁 Digite um OI"
     : "🔑 Digite sua chave de API";
-
-  const getOpenAiResponse = async () => {
-    const response = await axios.post("/api/bot", {
-      key: openAiKey,
-      messages: [
-        {
-          role: "user",
-          content: "Quanto eh 5 + 5?",
-        },
-      ],
-    });
-    console.log(response);
-  };
 
   const handleSumitMessage = (message: string) => {
     addUserMessage(selectedChat, message);
@@ -45,7 +35,7 @@ function Home(): ReactElement {
         {!!openAiKey ? (
           <ChatMessages
             messages={chats[selectedChat].messages}
-            isLoading={false}
+            isLoading={isLoading}
           />
         ) : (
           <KeyInstructions />

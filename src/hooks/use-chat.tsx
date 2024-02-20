@@ -1,5 +1,6 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { v4 as uuid } from "uuid";
+import axios from "@/utils/axios";
 
 export interface Message {
   role: "user" | "assistant";
@@ -29,7 +30,10 @@ type Action =
     }
   | {
       type: "update-assistant-response";
-      payload: any;
+      payload: {
+        chatId: string;
+        chatToUpdate: Chat;
+      };
     }
   | {
       type: "update-assistant-error";
@@ -39,10 +43,34 @@ type Action =
 function chatReducer(state: State, action: Action): State {
   switch (action.type) {
     case "update-assistant-response":
-      return state;
+      return {
+        ...state,
+        chats: {
+          ...state.chats,
+          [action.payload.chatId]: action.payload.chatToUpdate,
+        },
+        isLoading: false,
+      };
 
     case "update-assistant-error":
-      return state;
+      return {
+        ...state,
+        chats: {
+          ...state.chats,
+          [action.payload.chatId]: {
+            ...state.chats[action.payload.chatId],
+            messages: [
+              ...(state.chats[action.payload.chatId]?.messages || []),
+              {
+                role: "assistant",
+                content:
+                  "Ocorreu um ero ao comunicar com o servirodr, por favor verifique sua chave e tente novamente.",
+              },
+            ],
+          },
+        },
+        isLoading: true,
+      };
 
     case "add-user-message":
       return {
@@ -73,12 +101,55 @@ function generateInitialState(): State {
   };
 }
 
-export const useChat = () => {
+export const useChat = (openAikey: string) => {
   const [state, dispatch] = useReducer(chatReducer, {}, generateInitialState);
 
   const addUserMessage = (chatId: string, message: string) => {
     dispatch({ type: "add-user-message", payload: { chatId, message } });
   };
+
+  const selecteChatMessageCount =
+    state.chats[state.selectedChat].messages.length;
+
+  const lastMessageSender =
+    state.chats[state.selectedChat].messages[selecteChatMessageCount - 1]?.role;
+
+  useEffect(() => {
+    const getOpenAiResponse = async () => {
+      try {
+        const { data: chat } = await axios.post("/api/bot", {
+          key: openAikey,
+          chat: state.chats[state.selectedChat],
+        });
+        dispatch({
+          type: "update-assistant-response",
+          payload: {
+            chatId: state.selectedChat,
+            chatToUpdate: chat,
+          },
+        });
+      } catch (error) {
+        dispatch({
+          type: "update-assistant-error",
+          payload: { chatid: state.chats[state.selectedChat] },
+        });
+      }
+    };
+
+    if (
+      !!openAikey &&
+      selecteChatMessageCount > 0 &&
+      lastMessageSender === "user"
+    ) {
+      getOpenAiResponse();
+    }
+  }, [
+    openAikey,
+    selecteChatMessageCount,
+    lastMessageSender,
+    state.chats,
+    state.selectedChat,
+  ]);
 
   return {
     chats: state.chats,
