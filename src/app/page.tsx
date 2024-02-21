@@ -14,8 +14,14 @@ import { useChat } from "@/hooks/use-chat";
 
 function Home(): ReactElement {
   const [openAiKey, setOpenAiKey] = useState<string>("");
-  const { chats, isLoading, selectedChat, addUserMessage, selectChat } =
-    useChat(openAiKey);
+  const {
+    chats,
+    isLoading,
+    selectedChat,
+    addUserMessage,
+    selectChat,
+    deleteChat,
+  } = useChat(openAiKey);
 
   const placeholder = !!openAiKey
     ? "😁 Digite um OI"
@@ -32,7 +38,7 @@ function Home(): ReactElement {
       <Sidebar
         isVisible={!!openAiKey}
         selectedChat={selectedChat}
-        deleteChat={() => {}}
+        deleteChat={deleteChat}
         selectChat={selectChat}
         chats={chats}
       />

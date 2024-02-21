@@ -46,6 +46,12 @@ type Action =
       payload: {
         chatId: string;
       };
+    }
+  | {
+      type: "delete-chat";
+      payload: {
+        chatId: string;
+      };
     };
 
 function chatReducer(state: State, action: Action): State {
@@ -101,6 +107,19 @@ function chatReducer(state: State, action: Action): State {
         ...state,
         selectedChat: action.payload.chatId,
       };
+    case "delete-chat":
+      const newChats = structuredClone(state.chats);
+      delete newChats[action.payload.chatId];
+
+      const newSelectedChat =
+        state.selectedChat === action.payload.chatId
+          ? Object.keys(newChats)[0]
+          : state.selectedChat;
+      return {
+        ...state,
+        chats: newChats,
+        selectedChat: newSelectedChat,
+      };
   }
 }
 
@@ -130,6 +149,13 @@ export const useChat = (openAikey: string) => {
   const selectChat = (chatId: string) => {
     dispatch({
       type: "select-chat",
+      payload: { chatId },
+    });
+  };
+
+  const deleteChat = (chatId: string) => {
+    dispatch({
+      type: "delete-chat",
       payload: { chatId },
     });
   };
@@ -199,5 +225,6 @@ export const useChat = (openAikey: string) => {
     selectedChat: state.selectedChat,
     addUserMessage,
     selectChat,
+    deleteChat,
   };
 };
