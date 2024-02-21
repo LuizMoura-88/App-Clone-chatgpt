@@ -157,7 +157,19 @@ export const useChat = (openAikey: string) => {
   ]);
 
   useEffect(() => {
-    localStorage.setItem("chats", JSON.stringify(state.chats));
+    const chatsToIgnore = Object.keys(state.chats).filter(
+      (chatIndex) =>
+        state.chats[chatIndex].messages.length < 2 &&
+        state.chats[chatIndex].title === "Nova conversa"
+    );
+
+    const chatsToSave = structuredClone(state.chats);
+
+    chatsToIgnore.forEach((chatIndex) => {
+      delete chatsToSave[chatIndex];
+    });
+
+    localStorage.setItem("chats", JSON.stringify(chatsToSave));
   }, [state.chats]);
 
   return {
