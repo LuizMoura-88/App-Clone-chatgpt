@@ -52,7 +52,9 @@ const MessageBlock = ({
             className="mr-4"
           />
         ) : (
-          <Markdown>{message.content}</Markdown>
+          <div className="flex flex-col gap-4">
+            <Markdown>{message.content}</Markdown>
+          </div>
         )}
       </div>
     </div>

@@ -1,9 +1,5 @@
 "use client";
 
-// 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
-
-//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
-
 import { ReactElement, useEffect, useState } from "react";
 import { KeyInstructions } from "./_components/key-instructions";
 import { ChatInput } from "./_components/chat-input";
