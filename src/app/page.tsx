@@ -2,6 +2,8 @@
 
 // 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
 
+//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
+
 import { ReactElement, useEffect, useState } from "react";
 import { KeyInstructions } from "./_components/key-instructions";
 import { ChatInput } from "./_components/chat-input";
@@ -26,7 +28,13 @@ function Home(): ReactElement {
 
   return (
     <div className="flex">
-      <Sidebar isVisible={!!openAiKey} />
+      <Sidebar
+        isVisible={!!openAiKey}
+        selectedChat={selectedChat}
+        deleteChat={() => {}}
+        selectChat={() => {}}
+        chats={chats}
+      />
 
       <main className="w-full h-screen  flex flex-col justify-between">
         <h1 className="text-3xl pb-5 lg:text-[45px] font-bold text-gray text-center mt-10">

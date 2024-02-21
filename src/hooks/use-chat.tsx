@@ -91,10 +91,15 @@ function chatReducer(state: State, action: Action): State {
 }
 
 function generateInitialState(): State {
+  const chatsFromLocalStorage = JSON.parse(
+    localStorage.getItem("chats") || "{}"
+  );
+
   const id = uuid();
   return {
     chats: {
       [id]: { title: "Nova conversa", messages: [] },
+      ...chatsFromLocalStorage,
     },
     isLoading: false,
     selectedChat: id,
@@ -150,6 +155,10 @@ export const useChat = (openAikey: string) => {
     state.chats,
     state.selectedChat,
   ]);
+
+  useEffect(() => {
+    localStorage.setItem("chats", JSON.stringify(state.chats));
+  }, [state.chats]);
 
   return {
     chats: state.chats,
