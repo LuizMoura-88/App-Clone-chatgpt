@@ -5,7 +5,6 @@ import { KeyInstructions } from "./_components/key-instructions";
 import { ChatInput } from "./_components/chat-input";
 import { Sidebar } from "./_components/sidevar";
 import { ChatMessages } from "./_components/chat-messages";
-import axios from "@/utils/axios";
 import { useChat } from "@/hooks/use-chat";
 
 function Home(): ReactElement {
