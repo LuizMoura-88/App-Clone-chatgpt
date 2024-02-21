@@ -37,7 +37,15 @@ type Action =
     }
   | {
       type: "update-assistant-error";
-      payload: any;
+      payload: {
+        chatId: string;
+      };
+    }
+  | {
+      type: "select-chat";
+      payload: {
+        chatId: string;
+      };
     };
 
 function chatReducer(state: State, action: Action): State {
@@ -87,6 +95,12 @@ function chatReducer(state: State, action: Action): State {
         },
         isLoading: true,
       };
+
+    case "select-chat":
+      return {
+        ...state,
+        selectedChat: action.payload.chatId,
+      };
   }
 }
 
@@ -113,6 +127,13 @@ export const useChat = (openAikey: string) => {
     dispatch({ type: "add-user-message", payload: { chatId, message } });
   };
 
+  const selectChat = (chatId: string) => {
+    dispatch({
+      type: "select-chat",
+      payload: { chatId },
+    });
+  };
+
   const selecteChatMessageCount =
     state.chats[state.selectedChat].messages.length;
 
@@ -136,7 +157,7 @@ export const useChat = (openAikey: string) => {
       } catch (error) {
         dispatch({
           type: "update-assistant-error",
-          payload: { chatid: state.chats[state.selectedChat] },
+          payload: { chatId: state.selectedChat },
         });
       }
     };
@@ -177,5 +198,6 @@ export const useChat = (openAikey: string) => {
     isLoading: state.isLoading,
     selectedChat: state.selectedChat,
     addUserMessage,
+    selectChat,
   };
 };
