@@ -72,24 +72,27 @@ function chatReducer(state: State, action: Action): State {
       };
 
     case "update-assistant-error":
-      return {
-        ...state,
-        chats: {
-          ...state.chats,
-          [action.payload.chatId]: {
-            ...state.chats[action.payload.chatId],
-            messages: [
-              ...(state.chats[action.payload.chatId]?.messages || []),
-              {
-                role: "assistant",
-                content:
-                  "Ocorreu um erro ao comunicar com o servirodr, por favor verifique sua chave e tente novamente.",
-              },
-            ],
+      return (
+        console.log({ ...state }),
+        {
+          ...state,
+          chats: {
+            ...state.chats,
+            [action.payload.chatId]: {
+              ...state.chats[action.payload.chatId],
+              messages: [
+                ...(state.chats[action.payload.chatId]?.messages || []),
+                {
+                  role: "assistant",
+                  content:
+                    "Ocorreu um erro ao comunicar com o servidor, por favor verifique sua chave e tente novamente.",
+                },
+              ],
+            },
           },
-        },
-        isLoading: true,
-      };
+          isLoading: true,
+        }
+      );
 
     case "add-user-message":
       return {
