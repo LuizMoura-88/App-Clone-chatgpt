@@ -1,59 +1,88 @@
-# Clone do ChatGPT
 
-Já considerou a possibilidade de desenvolver o seu próprio chatbot? A inteligência artificial está conquistando cada vez mais espaço, e com a API da OpenAI, você tem a oportunidade de criar o seu próprio ChatGPT. Com a capacidade de gerar textos de maneira natural, o seu chatbot estará pronto para conversar com você.
 
-## 🤓 Antes de começar
+## 🖥️ WebSite Clone ChatGpt
 
-Este Mini Projeto contém um boilerplate inicial, ou seja, algumas partes do código já estão prontas para que você possa focar nas tecnologias principais. Atente-se, portanto, à estrutura do código inicial.
+Está aplicação foi idealizada pela escola de tecnologia [codante.io](https://codante.io/), Com prosposta de consumir api de terceiros utilizando Next.js-14, para ter acessos aos serviços de chat com o robo é necessario realizar um cadastro no site da OpenAi, acessar documentação e Gerar uma chave secreta, exemplo: 
+<details>
+  <summary>Acessar video</summary>
+https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/11be9107-fd78-4172-b4d3-74d7c5f5aefd
+</details>
 
-Caso você prefira começar do zero, não tem problema, basta apagar os arquivos.
+##
 
-## 🔨 Requisitos
+### 📌 Layout do Projeto 
+<img width="2152" alt="processo_2" src="https://github.com/LuizMoura-88/app-metas-diarias/assets/122941117/118c9e98-8e0b-428e-83e6-36d634888b0c">
 
-- Utilize o Next.js + TypeScript + Tailwind CSS.
-- Utilize a API da OpenAI para gerar os textos.
+##
 
-	> 👀 **Dicas:**
-	> - Utilize as rotas de API do Next.js para fazer as requisições à OpenAI.
-	> - Tire as suas dúvidas na documentação da [OpenAI](https://www.npmjs.com/package/openai).
+### 📌 Tecnologias Utilizadas      
+```
+  "dependencies": {
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@vercel/kv": "^0.2.4",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10",
+    "next": "13.4.10",
+    "postcss": "8.4.26",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6",
+    "vercel": "^33.5.1"
+  }
+```
+##
 
-- Crie um guia inicial de como o usuário pode obter a sua chave de acesso da OpenAI.
-- Seu app deve ter um campo de texto para o usuário digitar a sua chave.
+### Como rodar o projeto ✅
+* ##### Faça o download do repositório, copie para uma pasta local, abra esta pasta por uma IDE (Ambiente de Desenvolvimento Integrado) foi utilizado o VSCODE
+```
+1° Copiar link: git@github.com:LuizMoura-88/app-metas-diarias.git
+2° Abrir a linha de comando de seu computador local, escolher um diretório e efetuar o git clone:  git clone git@github.com:LuizMoura-88/app-metas-diarias.git
+3° Após efetuar o download do repositório remoto abrir o arquivo em sua IDE (ambiente de desenvolvimento integrado).
+4° Em sua linha de comando efetuar o comando npm run dev
+5° Escolha e aperte `ctrl+click` o link que será gerado automaticamente pelo sistema exemplo: url: http://localhost:3000
+```
+##
 
-	> ⚠️ **Cuidado:**
-  > - Sua chave API é secreta e não pode ser compartilhada. Utilize-a somente em sua máquina local e não faça commit com ela no seu código. 
+### Como utilizar o serviço ✅
+<details>
+  <summary>Acessar video</summary>
+  https://github.com/LuizMoura-88/app-metas-diarias/assets/122941117/dcddcfc6-8612-417c-bc08-8a216eaec4f6
+</details>
 
-- Seu app deve ter um campo de texto para o usuário digitar a sua pergunta.
 
-	> 👀 **Dicas:**
-	> - Busque reaproveitar componentes.
-	> - Fique à vontade para utilizar qualquer gerenciador de estado.
 
-- Seu app deve ter um botão para enviar a pergunta à OpenAI.
-- Crie componentes para renderizar as perguntas do usuário e respostas do bot.
-- Crie um loading para indicar que a resposta do bot está sendo processada.
 
-## 🔨 Desafio extra para quem quer ir além
 
-- Crie um menu lateral para armazenar diferentes conversas.
-- Crie uma lógica para que seja possível navegar entre as conversas.
-- Crie uma lógica para que seja possível excluir uma conversa.
-- Utilize o localStorage para carregar a sua lista de conversas ao abrir a aplicação.
+##
 
-## 🎨 Design Sugerido
+🌐 [Visitar - WebSite](https://app-metas-diarias.vercel.app/novo-habito)
 
-Temos uma sugestão de design no Figma. Entretanto, fique à vontade para montar a aplicação conforme a sua criatividade.
 
-### Figma
+##
 
-🔗 [Link do design](https://www.figma.com/community/file/1318940470386467243/mini-projeto-clone-chatgpt)
+## 📌 Informações Adicionais
+* A prentensão foi implementar uma aplicação utilizando next.js e typescript.
+* iniciativa do projeto tem como origem o seguinte endereço: [🌐](https://codante.io/mini-projetos/gerenciador-de-habitos-com-nextjs)
 
-## 👉🏽 Sobre esse Mini Projeto
+##
 
-### Tecnologias
+## ⚠️ Problemas enfrentados
+* Encontrei dificuldade em realizar a integração entre next.js e kv/vercel por ser uma tecnologia recente para mim.
+  
+##
+  
+## ⏭️ Próximos passos
 
-- **Tecnologias:**
-  - `Next.js`;
-  - `TypeScript`;
-  - `Tailwind CSS`;
-  - `OpenAI`;
+* Implementar testes unitários.
+* refatoração de código, baseando-se nos princípios de clean code.
+* implementar novas funcionalidades.
+
+##
+
+### ✅  Autor
+Luiz Guilherme da Silva Moura <br/>
+[LinkedIn](https://www.linkedin.com/in/luiz-moura-b60099252/)
