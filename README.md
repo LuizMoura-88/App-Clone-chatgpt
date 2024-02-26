@@ -20,20 +20,40 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ### 📌 Tecnologias Utilizadas      
 ```
   "dependencies": {
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
-    "@vercel/kv": "^0.2.4",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "next": "13.4.10",
-    "postcss": "8.4.26",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6",
-    "vercel": "^33.5.1"
+    "axios": "^1.6.0",
+    "clsx": "^2.1.0",
+    "js-cookie": "^3.0.5",
+    "next": "14.0.1",
+    "openai": "^4.14.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-responsive": "^9.0.2",
+    "tailwind-merge": "^2.2.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/debug": "^4.1.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-responsive": "^8.0.7",
+    "@types/uuid": "^9.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "autoprefixer": "^10.0.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^8",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
   }
 ```
 ##
