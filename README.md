@@ -61,11 +61,11 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ### Como rodar o projeto ✅
 * ##### Faça o download do repositório, copie para uma pasta local, abra esta pasta por uma IDE (Ambiente de Desenvolvimento Integrado) foi utilizado o VSCODE
 ```
-1° Copiar link: git@github.com:LuizMoura-88/app-metas-diarias.git
-2° Abrir a linha de comando de seu computador local, escolher um diretório e efetuar o git clone:  git clone git@github.com:LuizMoura-88/app-metas-diarias.git
+1° Copiar link: git@github.com:LuizMoura-88/App-Clone-chatgpt.git
+2° Abrir a linha de comando de seu computador local, escolher um diretório e efetuar o git clone:  git clone git@github.com:LuizMoura-88/App-Clone-chatgpt.git
 3° Após efetuar o download do repositório remoto abrir o arquivo em sua IDE (ambiente de desenvolvimento integrado).
 4° Em sua linha de comando efetuar o comando npm run dev
-5° Escolha e aperte `ctrl+click` o link que será gerado automaticamente pelo sistema exemplo: url: http://localhost:3000
+5° npm i, apos baixar todas as dependencias registradas no arquivo package.json em seguida aperte `ctrl+click` no link que será gerado automaticamente pelo sistema exemplo: url: http://localhost:3000
 ```
 ##
 
@@ -75,21 +75,15 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
   https://github.com/LuizMoura-88/app-metas-diarias/assets/122941117/dcddcfc6-8612-417c-bc08-8a216eaec4f6
 </details>
 
-
-
-
-
 ##
 
-🌐 [Visitar - WebSite](https://app-metas-diarias.vercel.app/novo-habito)
-
+🌐 [Visitar - WebSite](https://www.sdddsdghjfkglgfdsafghkjlgfdsa.shop/)
 
 ##
 
 ## 📌 Informações Adicionais
 * A prentensão foi implementar uma aplicação utilizando next.js e typescript.
-* iniciativa do projeto tem como origem o seguinte endereço: [🌐](https://codante.io/mini-projetos/gerenciador-de-habitos-com-nextjs)
-
+* iniciativa do projeto tem como origem o seguinte endereço: [🌐](https://codante.io/mini-projetos/clone-do-chatgpt-com-nextjs)
 ##
 
 ## ⚠️ Problemas enfrentados
