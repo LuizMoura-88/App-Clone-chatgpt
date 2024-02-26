@@ -129,11 +129,11 @@ function chatReducer(state: State, action: Action): State {
 }
 
 function generateInitialState(): State {
-  const chatsFromLocalStorage = JSON.parse(
-    localStorage.getItem("chats") || "{}"
-  );
+  // const chatsFromLocalStorage = JSON.parse(
+  //   localStorage.getItem("chats") || "{}"
+  // );
 
-  // const chatsFromLocalStorage = JSON.parse(getLocalStorage("chats") || "{}");
+  const chatsFromLocalStorage = JSON.parse(getLocalStorage("chats") || "{}");
 
   const id = uuid();
   return {
@@ -188,6 +188,7 @@ export const useChat = (openAikey: string) => {
           },
         });
       } catch (error) {
+        console.log(error);
         dispatch({
           type: "update-assistant-error",
           payload: { chatId: state.selectedChat },
@@ -223,8 +224,8 @@ export const useChat = (openAikey: string) => {
       delete chatsToSave[chatIndex];
     });
 
-    localStorage.setItem("chats", JSON.stringify(chatsToSave));
-    // setLocalStorage("chats", JSON.stringify(chatsToSave));
+    // localStorage.setItem("chats", JSON.stringify(chatsToSave));
+    setLocalStorage("chats", JSON.stringify(chatsToSave));
   }, [state.chats]);
 
   return {
