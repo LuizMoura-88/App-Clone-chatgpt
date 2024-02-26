@@ -1,14 +1,12 @@
 
-
 ## 🖥️ WebSite Clone ChatGpt
 
-Está aplicação foi idealizada pela escola de tecnologia [codante.io](https://codante.io/), Com prosposta de consumir api de terceiros utilizando Next.js-14, para ter acessos aos serviços de chat com o robo é necessario realizar um cadastro no site da OpenAi, acessar documentação e Gerar uma chave secreta, exemplo: 
+Está aplicação foi idealizada pela escola de tecnologia [codante.io](https://codante.io/), com prosposta de consumir api de terceiros utilizando Next.js-14, para ter acessos aos serviços de chat é necessario realizar um cadastro no site da OpenAi, acessar documentação e Gerar uma chave secreta, exemplo: 
 <details>
   <summary>Acessar video</summary>
 https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/11be9107-fd78-4172-b4d3-74d7c5f5aefd
 </details>
-
-Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da OpenAi e persistindo essas informações no LocalStorage do navegador que esta sendo utilizado.O processo se tivede em tres etapas: 1° realizar uma pergunta, 2° após submeter a pergunta é chamado a API da OpenAi, os dados retornados são tratados e armazenados no LocalStorage.
+Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da OpenAi e persistindo essas informações no LocalStorage do navegador que esta sendo renderizado. O processo se tivide em três etapas: 1° realizar uma pergunta, 2° após submeter a pergunta é chamado a API da OpenAi, 3° os dados retornados são tratados e armazenados no LocalStorage.
 
 ##
 
