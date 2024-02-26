@@ -1,11 +1,11 @@
 import { useEffect, useReducer } from "react";
 import { v4 as uuid } from "uuid";
 import axios from "@/utils/axios";
-// import {
-//   setLocalStorage,
-//   getLocalStorage,
-//   removeLocalStorage,
-// } from "@/utils/localstorage";
+import {
+  setLocalStorage,
+  getLocalStorage,
+  removeLocalStorage,
+} from "@/utils/localstorage";
 
 export interface Message {
   role: "user" | "assistant";
@@ -72,27 +72,24 @@ function chatReducer(state: State, action: Action): State {
       };
 
     case "update-assistant-error":
-      return (
-        console.log({ ...state }),
-        {
-          ...state,
-          chats: {
-            ...state.chats,
-            [action.payload.chatId]: {
-              ...state.chats[action.payload.chatId],
-              messages: [
-                ...(state.chats[action.payload.chatId]?.messages || []),
-                {
-                  role: "assistant",
-                  content:
-                    "Ocorreu um erro ao comunicar com o servidor, por favor verifique sua chave e tente novamente.",
-                },
-              ],
-            },
+      return {
+        ...state,
+        chats: {
+          ...state.chats,
+          [action.payload.chatId]: {
+            ...state.chats[action.payload.chatId],
+            messages: [
+              ...(state.chats[action.payload.chatId]?.messages || []),
+              {
+                role: "assistant",
+                content:
+                  "Ocorreu um erro ao comunicar com o servi, por favor verifique sua chave e tente novamente.",
+              },
+            ],
           },
-          isLoading: true,
-        }
-      );
+        },
+        isLoading: true,
+      };
 
     case "add-user-message":
       return {
@@ -132,11 +129,11 @@ function chatReducer(state: State, action: Action): State {
 }
 
 function generateInitialState(): State {
-  const chatsFromLocalStorage = JSON.parse(
-    localStorage.getItem("chats") || "{}"
-  );
+  // const chatsFromLocalStorage = JSON.parse(
+  //   localStorage.getItem("chats") || "{}"
+  // );
 
-  // const chatsFromLocalStorage = JSON.parse(getLocalStorage("chats") || "{}");
+  const chatsFromLocalStorage = JSON.parse(getLocalStorage("chats") || "{}");
 
   const id = uuid();
   return {
@@ -227,8 +224,8 @@ export const useChat = (openAikey: string) => {
       delete chatsToSave[chatIndex];
     });
 
-    localStorage.setItem("chats", JSON.stringify(chatsToSave));
-    // setLocalStorage("chats", JSON.stringify(chatsToSave));
+    // localStorage.setItem("chats", JSON.stringify(chatsToSave));
+    setLocalStorage("chats", JSON.stringify(chatsToSave));
   }, [state.chats]);
 
   return {
