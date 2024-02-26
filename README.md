@@ -8,6 +8,8 @@ Está aplicação foi idealizada pela escola de tecnologia [codante.io](https://
 https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/11be9107-fd78-4172-b4d3-74d7c5f5aefd
 </details>
 
+Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da OpenAi e persistindo essas informações no LocalStorage do navegador que esta sendo utilizado.O processo se tivede em tres etapas: 1° realizar uma pergunta, 2° após submeter a pergunta é chamado a API da OpenAi, os dados retornados são tratados e armazenados no LocalStorage.
+
 ##
 
 ### 📌 Layout do Projeto 
