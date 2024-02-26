@@ -80,12 +80,13 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ##
 
 ## 📌 Informações Adicionais
-* A prentensão foi implementar uma aplicação utilizando next.js e typescript.
+* A prentensão foi implementar uma aplicação utilizando next.js 14 e typescript para desenvolver minnhas habilidades tecnicas.
 * iniciativa do projeto tem como origem o seguinte endereço: [🌐](https://codante.io/mini-projetos/clone-do-chatgpt-com-nextjs)
 ##
 
 ## ⚠️ Problemas enfrentados
-* Encontrei dificuldade em realizar a integração entre next.js e kv/vercel por ser uma tecnologia recente para mim.
+
+* Encontrei dificuldade em comunicar ao vercel que os dados estão sendo permitidos em um localstorage, problema fou solucinado implementado uma biblioteca que define o localstorage no qual a aplicação esta sendo renderizado.
   
 ##
   
@@ -94,6 +95,7 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 * Implementar testes unitários.
 * refatoração de código, baseando-se nos princípios de clean code.
 * implementar novas funcionalidades.
+* implementar banco de dados.
 
 ##
 
