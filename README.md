@@ -11,7 +11,9 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ##
 
 ### 📌 Layout do Projeto 
-<img width="1694" alt="Untitled" src="https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/9b795801-6397-40bd-80ae-b672a28353d7">
+<img width="1694" alt="Untitled" src="https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/0e193741-ed4d-42c5-bd23-29f82cc8fe9c">
+
+
 ##
 
 ### 📌 Tecnologias Utilizadas      
