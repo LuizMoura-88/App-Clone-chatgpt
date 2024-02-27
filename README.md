@@ -81,7 +81,7 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ## 📌 Informações Adicionais
 * A prentensão foi implementar uma aplicação utilizando next.js 14 e typescript para desenvolver minnhas habilidades tecnicas.
 * iniciativa do projeto tem como origem o seguinte endereço: [🌐](https://codante.io/mini-projetos/clone-do-chatgpt-com-nextjs).
-* Foi utilizado o useReducer do React para que é responsavel por gerenciar o trafego de dados na aplicação.
+* Foi utilizado o useReducer do React responsavel por gerenciar o trafego de dados na aplicação.
 ##
 
 ## ⚠️ Problemas enfrentados
