@@ -58,6 +58,14 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ##
 
 ### Como rodar o projeto ✅
+**Pré-requisitos**
+
+Certifique-se de que tem o seguinte instalado no seu computador:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
 * ##### Faça o download do repositório, copie para uma pasta local, abra esta pasta por uma IDE (Ambiente de Desenvolvimento Integrado) foi utilizado o VSCODE
 ```
 1° Copiar link: git@github.com:LuizMoura-88/App-Clone-chatgpt.git
