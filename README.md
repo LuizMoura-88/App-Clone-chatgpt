@@ -70,7 +70,7 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ### Como utilizar o serviço ✅
 <details>
   <summary>Acessar video</summary>
-  https://github.com/LuizMoura-88/app-metas-diarias/assets/122941117/dcddcfc6-8612-417c-bc08-8a216eaec4f6
+  https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/359d0494-983f-48d2-86c9-dc26876a7042
 </details>
 
 ##
