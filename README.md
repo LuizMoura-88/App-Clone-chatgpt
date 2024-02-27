@@ -11,8 +11,7 @@ Esta aplicação está utilizando a biblioteca AXIOS para consumir a API da Open
 ##
 
 ### 📌 Layout do Projeto 
-<img width="2152" alt="processo_2" src="https://github.com/LuizMoura-88/app-metas-diarias/assets/122941117/118c9e98-8e0b-428e-83e6-36d634888b0c">
-
+<img width="1694" alt="Untitled" src="https://github.com/LuizMoura-88/App-Clone-chatgpt/assets/122941117/9b795801-6397-40bd-80ae-b672a28353d7">
 ##
 
 ### 📌 Tecnologias Utilizadas      
